@@ -5,7 +5,7 @@ class Tagger {
 
   public function __construct()
   {
-      $this->routes = [];
+      $this->snippets = [];
   }
 
   // public function between($before, $after, $pool)
@@ -46,12 +46,22 @@ class Tagger {
 
   public function tag($tag, $end, $string)
   {
-    preg_match_all("/${tag}(.*?)${end}/s", $string, $this->routes);
+    preg_match_all("/${tag}(.*?)${end}/s", $string, $array);
+    return $array[1];
   }
 
-  public function getRoutes($string, $array)
+  public function tagString($string, $bool)
   {
-    preg_match_all("/'(.*?)'/s", $string, $array);
-    return $array;
+    if ($bool)
+    {
+      preg_match_all('/"(.*?)"/s', $string, $array);
+      return $array[1];
+    }
+    else
+    {
+      preg_match_all("/'(.*?)'/s", $string, $array);
+      return $array[1];
+    }
+
   }
 }
