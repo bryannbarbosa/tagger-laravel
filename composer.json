@@ -1,0 +1,13 @@
+{
+    "name": "bryann/tagger",
+    "description": "Generate Postman Routes with Laravel Routes",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "bryannbarbosa",
+            "email": "bryannbarbosa@gmail.com"
+        }
+    ],
+    "require": {}
+}
